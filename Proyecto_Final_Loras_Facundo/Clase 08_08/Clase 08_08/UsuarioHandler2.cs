@@ -4,15 +4,17 @@ namespace ConsoleApp1
 {
     public class UsuarioHandler : DbHandler
     {
-        public List<Usuario> GetUsuarios()
+        public List<Usuario> GetUsuarios(int id)
         {
             List<Usuario> usuarios = new List<Usuario>();
 
 
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Usuario;", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Usuario WHERE Id = @id;", sqlConnection))
                 {
+                    SqlParameter parametroId = new SqlParameter("id", System.Data.SqlDbType.BigInt);
+                    parametroId.Value = id;
                     sqlConnection.Open();
 
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
@@ -30,6 +32,8 @@ namespace ConsoleApp1
                                 usuario.Contraseña = dataReader["Contraseña"].ToString();
 
                                 usuarios.Add(usuario);
+                                sqlCommand.Parameters.Add(parametroId);
+                                sqlCommand.ExecuteScalar();
 
                             }
                         }
@@ -208,9 +212,17 @@ namespace ConsoleApp1
   
             }
 
-            catch 
+            catch
             {
-                return null;
+                Usuario usuarioNull = new Usuario();
+                usuarioNull.Nombre = "";
+                usuarioNull.Apellido = "";
+                usuarioNull.NombreUsuario = "";
+                usuarioNull.Contraseña = "";
+                usuarioNull.Mail = "";
+                usuarioNull.Id = 0;
+
+                return usuarioNull;
             }
         }
 

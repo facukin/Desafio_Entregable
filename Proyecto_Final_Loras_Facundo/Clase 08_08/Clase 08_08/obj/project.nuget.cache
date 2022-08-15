@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hp5winMFwQVZm6kaSMfDq8SLmvtuzrVOTb+4W7S8LLI/nyMTCUW3bTobrX2xhqCjyPCrFJe5lPFFsvKTrZ9cGw==",
+  "dgSpecHash": "PBhOLueE2bwoInk4ogu3mHe1LIY6C5Rt0JVRcZ4/MIJRQCRXTxbrYOYoUTWtX4idcytNZesCG3XqzTzCHU3TTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Facukin\\Desktop\\Coder\\ProyectoFinal\\ProyectoFinal_LorasFacundo\\Clase 08_08\\Clase 08_08.csproj",
+  "projectFilePath": "C:\\Users\\Facukin\\Desktop\\Clase 8_8\\Clase 08_08\\Clase 08_08\\Clase 08_08.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Facukin\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Facukin\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",

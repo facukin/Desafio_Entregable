@@ -9,14 +9,17 @@ namespace ConsoleApp1
 {
     public class ProductoVendidoHandler : DbHandler
     {
-        public List<ProductoVendido> GetProductoVendidos(ProductoVendido productoVendido)
+        public List<ProductoVendido> GetProductoVendidos(int id)
         {
             List<ProductoVendido> productosVendidos = new List<ProductoVendido>();
 
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM ProductoVendido", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM ProductoVendido WHERE Id = @id;", sqlConnection))
                 {
+                    SqlParameter parametroId = new SqlParameter("id", System.Data.SqlDbType.BigInt);
+                    parametroId.Value = id;
+
                     sqlConnection.Open();
 
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
@@ -32,6 +35,8 @@ namespace ConsoleApp1
                                 productoVendido.IdVenta = Convert.ToInt32(dataReader["IdVenta"]);
 
                                 productosVendidos.Add(productoVendido);
+                                sqlCommand.Parameters.Add(parametroId);
+                                sqlCommand.ExecuteScalar();
                             }
                         }
 

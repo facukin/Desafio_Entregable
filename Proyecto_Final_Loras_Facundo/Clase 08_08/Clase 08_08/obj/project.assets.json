@@ -835,11 +835,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Facukin\\Desktop\\Coder\\ProyectoFinal\\ProyectoFinal_LorasFacundo\\Clase 08_08\\Clase 08_08.csproj",
+      "projectUniqueName": "C:\\Users\\Facukin\\Desktop\\Clase 8_8\\Clase 08_08\\Clase 08_08\\Clase 08_08.csproj",
       "projectName": "Clase 08_08",
-      "projectPath": "C:\\Users\\Facukin\\Desktop\\Coder\\ProyectoFinal\\ProyectoFinal_LorasFacundo\\Clase 08_08\\Clase 08_08.csproj",
+      "projectPath": "C:\\Users\\Facukin\\Desktop\\Clase 8_8\\Clase 08_08\\Clase 08_08\\Clase 08_08.csproj",
       "packagesPath": "C:\\Users\\Facukin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Facukin\\Desktop\\Coder\\ProyectoFinal\\ProyectoFinal_LorasFacundo\\Clase 08_08\\obj\\",
+      "outputPath": "C:\\Users\\Facukin\\Desktop\\Clase 8_8\\Clase 08_08\\Clase 08_08\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Facukin\\AppData\\Roaming\\NuGet\\NuGet.Config",

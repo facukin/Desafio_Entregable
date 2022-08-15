@@ -10,7 +10,7 @@ namespace ConsoleApp1
 {
     public class VentasHandler : DbHandler
     {
-        public List<Ventas> GetVentas(Ventas venta)
+        public List<Ventas> GetVentas(int id)
         {
             try
             {
@@ -18,8 +18,10 @@ namespace ConsoleApp1
 
                 using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
                 {
-                    using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM ProductoVendido;", sqlConnection))
+                    using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM ProductoVendido WHERE Id = @id;", sqlConnection))
                     {
+                        SqlParameter parametroId = new SqlParameter("id", System.Data.SqlDbType.BigInt);
+                        parametroId.Value = id;
                         sqlConnection.Open();
 
                         using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
@@ -28,11 +30,13 @@ namespace ConsoleApp1
                             {
                                 while (dataReader.Read())
                                 {
-                                    Ventas vendido = new Ventas();
-                                    vendido.Id = Convert.ToInt32(dataReader["Id"]);
-                                    vendido.Comentarios = dataReader["Comentarios"].ToString();
+                                    Ventas venta = new Ventas();
+                                    venta.Id = Convert.ToInt32(dataReader["Id"]);
+                                    venta.Comentarios = dataReader["Comentarios"].ToString();
 
-                                    ventas.Add(vendido);
+                                    ventas.Add(venta);
+                                    sqlCommand.Parameters.Add(parametroId);
+                                    sqlCommand.ExecuteScalar();
                                 }
                             }
                             sqlConnection.Close();

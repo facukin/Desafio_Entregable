@@ -9,15 +9,17 @@ namespace ConsoleApp1
 
 
     
-        public List<Producto> GetProductos()
+        public List<Producto> GetProductos(int id)
         {
             List<Producto> productos = new List<Producto>();
 
 
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             { 
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Producto", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Producto WHERE Id = @id;", sqlConnection))
                 {
+                    SqlParameter parametroId = new SqlParameter("id", SqlDbType.BigInt);
+                    parametroId.Value = id;
                     sqlConnection.Open();
 
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
@@ -35,6 +37,8 @@ namespace ConsoleApp1
                                     producto.PrecioVenta = Convert.ToInt32(dataReader["PrecioVenta"]);
 
                                     productos.Add(producto);
+                                sqlCommand.Parameters.Add(parametroId);
+                                sqlCommand.ExecuteScalar();
 
                                 }
                         }
