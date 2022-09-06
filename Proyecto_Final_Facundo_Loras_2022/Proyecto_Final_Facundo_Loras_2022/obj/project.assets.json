@@ -656,11 +656,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Facukin\\Desktop\\Coder\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022.csproj",
+      "projectUniqueName": "C:\\Users\\Facukin\\Desktop\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022.csproj",
       "projectName": "Proyecto_Final_Facundo_Loras_2022",
-      "projectPath": "C:\\Users\\Facukin\\Desktop\\Coder\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022.csproj",
+      "projectPath": "C:\\Users\\Facukin\\Desktop\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022.csproj",
       "packagesPath": "C:\\Users\\Facukin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Facukin\\Desktop\\Coder\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022\\obj\\",
+      "outputPath": "C:\\Users\\Facukin\\Desktop\\Proyecto_Final_Facundo_Loras_2022\\Proyecto_Final_Facundo_Loras_2022\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Facukin\\AppData\\Roaming\\NuGet\\NuGet.Config",

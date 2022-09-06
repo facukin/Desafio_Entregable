@@ -35,18 +35,19 @@ namespace Clase_08_08.Controllers
 
 
         [HttpPut]
-        public void AgregarProducto([FromBody] Producto producto)
-        {
-            ProductoHandler.AgregarProducto(producto);
-        }
 
-
-
-        [HttpPost]
         public void UpdateProducto([FromBody] Producto producto)
         {
             ProductoHandler.UpdateProducto(producto);
         }
+
+        [HttpPost]
+
+        public void AgregarProducto([FromBody] Producto producto)
+        {
+            ProductoHandler.AgregarProducto(producto);
+        }
+       
 
 
     }
